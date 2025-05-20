@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Health Information System</div>
+        
+    </div>
+<div class="dashboard-container">
+    <div class="sidebar">
+        <h3>Health System</h3>
+        <a th:href="@{/dashboard}">Dashboard</a>
+        <a th:href="@{/clientform}">Register Client</a>
+        <a th:href="@{/clientlist}">View Clients</a>
+        <a th:href="@{/healthPrograms}">Create Program</a>
+    </div>
+    <div class="main-content">
+        <h2>Welcome to the Health Information System</h2>
+        <p>This system helps doctors manage clients and health programs.</p>
+        <ul>
+            <li>Register new clients</li>
+            <li>Enroll clients into programs</li>
+            <li>View enrolled programs</li>
+            <li>Search clients</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

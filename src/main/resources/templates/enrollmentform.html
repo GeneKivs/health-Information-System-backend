@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enroll Client</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <script src="/health.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Health Information System</div>
+        
+    </div>
+<div class="dashboard-container">
+    <div class="sidebar">
+        <h3>Health System</h3>
+        <a th:href="@{/dashboard}">Dashboard</a>
+        <a th:href="@{/clientform}">Register Client</a>
+        <a th:href="@{/clientlist}">View Clients</a>
+        <a th:href="@{/healthPrograms}">Create Program</a>
+    </div>
+<div class="container">
+    <div th:if="${errorMessage}" class="error-message">
+        <p th:text="${errorMessage}"></p>
+        <button class="error-btn" onclick="closeMessage('error-message')">OK</button>
+    </div>
+    <div th:if="${successMessage}" class="success-message">
+        <p th:text="${successMessage}"></p>
+        <button class="success-btn" onclick="closeMessage('success-message')">OK</button>
+    </div>
+    <form th:action="@{/enroll}" method="post">
+    <h2>Enroll Client in Health Programs</h2>
+
+    <label for="clientID">client Name:</label>
+    <select name="clientID" required>
+        <option value="">Select client</option>
+        <option th:each="client: ${clients}" th:value="${client.clientID}" th:text="${client.firstName}"></option>
+    </select>
+
+
+    <div th:each="healthProgram: ${healthPrograms}">
+        <label>
+            <input type="checkbox" name="healthProgramIDs" th:value="${healthProgram.healthProgramID}">
+            <span th:text="${healthProgram.healthProgramName}"></span>
+        </label>
+    </div>
+
+        <button type="submit">Enroll</button>
+    </form>
+</div>
+</body>
+</html>

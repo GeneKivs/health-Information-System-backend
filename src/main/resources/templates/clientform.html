@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register New Client</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <script src="/health.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Health Information System</div>
+        
+    </div>
+<div class="dashboard-container">
+    <div class="sidebar">
+        <h3>Health System</h3>
+        <a th:href="@{/dashboard}">Dashboard</a>
+        <a th:href="@{/clientform}">Register Client</a>
+        <a th:href="@{/clientlist}">View Clients</a>
+        <a th:href="@{/healthPrograms}">Create Program</a>
+    </div>
+<div class="container">
+    <div th:if="${errorMessage}" class="error-message">
+        <p th:text="${errorMessage}"></p>
+        <button class="error-btn" onclick="closeMessage('error-message')">OK</button>
+    </div>
+    <div th:if="${successMessage}" class="success-message">
+        <p th:text="${successMessage}"></p>
+        <button class="success-btn" onclick="closeMessage('success-message')">OK</button>
+    </div>
+    <h2>Register New Client</h2>
+    <form th:action="@{/registerClient}" th:object="${client}" method="post">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" th:field="*{firstName}" id="firstName" required />
+
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" th:field="*{lastName}" id="lastName" required />
+
+        <label for="age" class="form-label">Age</label>
+        <input type="number" th:field="*{age}" id="age" required />
+
+        
+
+        <label for="phoneNumber" class="form-label">Contact</label>
+        <input type="text" th:field="*{phoneNumber}" id="contact" required />
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+</body>
+</html>
