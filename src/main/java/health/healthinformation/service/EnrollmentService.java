@@ -19,6 +19,10 @@ public class EnrollmentService {
         enrollmentRepository.save(enrollment);
     }
 
+    public Enrollment createEnrollment(Enrollment enrollment){
+        return enrollmentRepository.save(enrollment);
+    }
+
     public List<HealthProgram> getHealthProgramsByClientID(int clientID){
         return enrollmentRepository.findHealthProgramsByClientID(clientID);
     }

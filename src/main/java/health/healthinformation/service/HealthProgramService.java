@@ -18,6 +18,10 @@ public class HealthProgramService {
         healthProgramRepository.save(healthProgram);
     }
 
+    public HealthProgram registerProgram(HealthProgram healthProgram){
+        return healthProgramRepository.save(healthProgram);
+    }
+
     public List<HealthProgram> getAllHealthPrograms(){
         return healthProgramRepository.findAll();
     }

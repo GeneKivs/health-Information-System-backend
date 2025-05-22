@@ -18,6 +18,8 @@ public class ClientService {
         clientRepository.save(client);
     }
 
+    public Client registerClient(Client client)
+{return clientRepository.save(client);}
     public Client getClientbyClientID(int clientID){
         return clientRepository.findByClientID(clientID);
     }
