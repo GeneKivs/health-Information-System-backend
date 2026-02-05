@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import health.healthinformation.model.Enrollment;
 import health.healthinformation.model.HealthProgram;
 
-public interface EnrollmentRepository extends JpaRepository<Enrollment, Integer> {
+public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
     @Query("SELECT healthProgram FROM Enrollment WHERE client.clientID = :clientID")
     List<HealthProgram> findHealthProgramsByClientID(@Param("clientID") int clientID);
 }
