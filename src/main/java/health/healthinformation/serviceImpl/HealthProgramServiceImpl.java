@@ -3,6 +3,8 @@ package health.healthinformation.serviceImpl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import health.healthinformation.dtos.HealthProgramRequestDTO;
 import health.healthinformation.dtos.HealthProgramResponseDTO;
 import health.healthinformation.mapper.HealthProgramMapper;
@@ -10,6 +12,7 @@ import health.healthinformation.model.HealthProgram;
 import health.healthinformation.repository.HealthProgramRepository;
 import health.healthinformation.service.HealthProgramServiceApi;
 
+@Service
 public class HealthProgramServiceImpl implements HealthProgramServiceApi {
 
     private final HealthProgramRepository programRepository;
