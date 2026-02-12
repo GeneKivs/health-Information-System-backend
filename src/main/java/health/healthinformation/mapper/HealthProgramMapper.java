@@ -29,6 +29,8 @@ public class HealthProgramMapper {
         dto.setHealthProgramID(program.getHealthProgramID());
         dto.setHealthProgramName(program.getHealthProgramName());
         dto.setDescription(program.getDescription());
+        dto.setCreatedAT(program.getCreatedAt());
+        dto.setUpdatedAT(program.getUpdatedAT());
 
         return dto;
     }

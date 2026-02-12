@@ -33,6 +33,8 @@ public class ClientMapper {
         dto.setClientName(fullName);
         dto.setAge(client.getAge());
         dto.setPhoneNumber(client.getPhoneNumber());
+        dto.setCreatedAt(client.getCreatedAt());
+        dto.setUpdatedAT(client.getUpdatedAT());
 
         return dto;
     }

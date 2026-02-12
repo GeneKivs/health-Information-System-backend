@@ -24,6 +24,9 @@ public class EnrollmentMapper {
             dto.setProgramName(enrollment.getHealthProgram().getHealthProgramName());
         }
 
+        dto.setCreatedAT(enrollment.getCreatedAt());
+        dto.setUpdatedAT(enrollment.getUpdatedAT());
+
         return dto;
 
 

@@ -1,10 +1,11 @@
 package health.healthinformation.model;
 
+import health.healthinformation.base.Auditable;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "clients")
-public class Client {
+public class Client extends Auditable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

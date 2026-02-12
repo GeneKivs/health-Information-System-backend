@@ -1,5 +1,7 @@
 package health.healthinformation.dtos;
 
+import java.time.LocalDate;
+
 public class EnrollmentResponseDTO {
 
     private Long enrollmentID;
@@ -9,6 +11,9 @@ public class EnrollmentResponseDTO {
 
     private int programID;
     private String programName;
+
+    private LocalDate createdAT;
+    private LocalDate updatedAT; 
 
     public Long getEnrollmentID(){
         return enrollmentID;
@@ -48,6 +53,22 @@ public class EnrollmentResponseDTO {
 
     public void setProgramName(String name){
         this.programName = name;
+    }
+
+    public LocalDate getCreatedAT(){
+        return createdAT;
+    }
+
+    public void setCreatedAT(LocalDate date){
+        this.createdAT = date;
+    } 
+
+    public LocalDate getUpdatedAt(){
+        return updatedAT;
+    } 
+
+    public void setUpdatedAT(LocalDate date){
+        this.updatedAT = date;
     }
 
 }

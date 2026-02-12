@@ -1,10 +1,11 @@
 package health.healthinformation.model;
 
+import health.healthinformation.base.Auditable;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "enrollments")
-public class Enrollment {
+public class Enrollment extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,17 +20,10 @@ public class Enrollment {
     private HealthProgram healthProgram;
 
 
-    private String enrollmentDate;
-
+  
     
 
-    public String getEnrollmentDate() {
-        return enrollmentDate;
-    }
 
-    public void setEnrollmentDate(String enrollmentDate) {
-        this.enrollmentDate = enrollmentDate;
-    }
 
     public Long getEnrollment(){
         return enrollmentID;

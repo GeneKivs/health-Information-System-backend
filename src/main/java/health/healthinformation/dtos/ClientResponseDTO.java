@@ -1,11 +1,15 @@
 package health.healthinformation.dtos;
 
+import java.time.LocalDate;
+
 public class ClientResponseDTO {
 
     private int clientID;
     private String clientName; 
     private String phoneNumber;
     private int age;
+    private LocalDate createdAT;
+    private LocalDate updatedAT;
 
     public int getClientId(){
         return clientID;
@@ -39,6 +43,22 @@ public class ClientResponseDTO {
 
     public void setAge(int age){
         this.age = age;
+    }
+
+    public LocalDate getCreatedAT(){
+        return createdAT;
+    }
+
+    public void setCreatedAt(LocalDate date){
+        this.createdAT = date; 
+    }
+
+    public LocalDate getUpdatedAt(){
+        return updatedAT;
+    } 
+
+    public void setUpdatedAT(LocalDate date){
+        this.updatedAT = date;
     }
 
 }

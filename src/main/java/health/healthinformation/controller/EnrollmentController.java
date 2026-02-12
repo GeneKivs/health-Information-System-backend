@@ -1,7 +1,7 @@
 package health.healthinformation.controller;
 
 
-import java.time.LocalDate;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,7 +62,7 @@ public class EnrollmentController {
 
                 newEnrollment.setClient(client);
                 newEnrollment.setHealthProgram(healthProgram);
-                newEnrollment.setEnrollmentDate(LocalDate.now().toString());
+                
                 enrollmentService.addEnrollment(newEnrollment);
             }
 

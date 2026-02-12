@@ -1,6 +1,6 @@
 package health.healthinformation.serviceImpl;
 
-import java.time.LocalDate;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -102,7 +102,7 @@ public class EnrollmentServiceImpl implements EnrollmentServiceApi {
                     Enrollment enrollment = new Enrollment();
                     enrollment.setClient(client);
                     enrollment.setHealthProgram(program);
-                    enrollment.setEnrollmentDate(LocalDate.now().toString());
+                   
                     
                     Enrollment saved = enrollmentRepository.save(enrollment);
                     return EnrollmentMapper.toResponseDTO(saved);
