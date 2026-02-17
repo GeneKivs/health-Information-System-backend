@@ -19,12 +19,7 @@ public class Enrollment extends Auditable {
     @JoinColumn(name = "healthProgramID")
     private HealthProgram healthProgram;
 
-
-  
-    
-
-
-
+ 
     public Long getEnrollment(){
         return enrollmentID;
     }
