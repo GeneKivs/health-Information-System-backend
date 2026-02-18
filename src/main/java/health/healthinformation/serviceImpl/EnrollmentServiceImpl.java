@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import health.healthinformation.dtos.EnrollmentRequestDTO;
 import health.healthinformation.dtos.EnrollmentResponseDTO;
+import health.healthinformation.dtos.HealthProgramResponseDTO;
 import health.healthinformation.mapper.EnrollmentMapper;
+import health.healthinformation.mapper.HealthProgramMapper;
 import health.healthinformation.model.Client;
 import health.healthinformation.model.Enrollment;
 import health.healthinformation.model.HealthProgram;
@@ -107,6 +109,14 @@ public class EnrollmentServiceImpl implements EnrollmentServiceApi {
                     Enrollment saved = enrollmentRepository.save(enrollment);
                     return EnrollmentMapper.toResponseDTO(saved);
                 })
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<HealthProgramResponseDTO>  getHealthProgramsByClientID(int clientID){
+        return enrollmentRepository.findHealthProgramsByClientID(clientID)
+                .stream()
+                .map(HealthProgramMapper::toResponse)
                 .collect(Collectors.toList());
     }
 

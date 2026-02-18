@@ -4,6 +4,7 @@ import java.util.List;
 
 import health.healthinformation.dtos.EnrollmentRequestDTO;
 import health.healthinformation.dtos.EnrollmentResponseDTO;
+import health.healthinformation.dtos.HealthProgramResponseDTO;
 
 public interface EnrollmentServiceApi {
 
@@ -19,5 +20,7 @@ public interface EnrollmentServiceApi {
 
 
   List<EnrollmentResponseDTO> enrollClientToPrograms(EnrollmentRequestDTO requestDTO);
+
+  List<HealthProgramResponseDTO> getHealthProgramsByClientID(int clientID); 
 
 }

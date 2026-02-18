@@ -3,7 +3,7 @@ package health.healthinformation.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import health.healthinformation.dtos.EnrollmentRequestDTO;
 import health.healthinformation.dtos.EnrollmentResponseDTO;
+import health.healthinformation.dtos.HealthProgramResponseDTO;
 
 
-import health.healthinformation.model.HealthProgram;
-
-import health.healthinformation.service.EnrollmentService;
 import health.healthinformation.service.EnrollmentServiceApi;
 
 @CrossOrigin(origins = "*")
@@ -29,8 +27,6 @@ public class EnrollmentsAPIController {
 
     private final EnrollmentServiceApi enrollmentServiceApi;
 
-    @Autowired
-    private  EnrollmentService enrollmentService;
 
     
 
@@ -42,8 +38,9 @@ public class EnrollmentsAPIController {
 
      //Get all healthPrograms a client is enrolled in
      @GetMapping("/client/{clientID}/healthPrograms")
-     public  List<HealthProgram> getClientEnrolledPrograms(@PathVariable int clientID){
-        return enrollmentService.getHealthProgramsByClientID(clientID);
+     public  ResponseEntity<List<HealthProgramResponseDTO>> getClientEnrolledPrograms(@PathVariable int clientID){
+         List<HealthProgramResponseDTO> reponse = enrollmentServiceApi.getHealthProgramsByClientID(clientID);
+        return ResponseEntity.ok(reponse);
      }
 
      @PostMapping("/bulk")
